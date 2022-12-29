@@ -40,15 +40,33 @@ This command shows the section header informantion, the symbol table, the reloca
 
 `$ objdump -s <filename>`
 
-This command shows the content of each section in hexadecimal format
+This command shows the content of each section in hexadecimal format.
 
 `$ objdump -d <filename>`
 
 This command decompiles all the sections that contain instructions.
 
+`$ objdump -t <filename>`
+
+This command shows the symbol table of an ELF.
+
 ## `readelf`
+`$ readelf -h <filename>`
+
+This command shows the header of an ELF.
+
+`$ readelf -S <filename>`
+
+This command shows the information of section headers, similar to `objdump -h`.
+
+`$ readelf -s <filename>`
+
+This command shows the symbol table of an ELF, similar to `objdump -t`.
 
 ## `nm`
+`$ nm <filename>`
+
+This command shows the symbol table of an ELF, similar to `objdump -t`.
 
 ## Makefile
 ```
@@ -67,4 +85,9 @@ The conventiosn are defined in [Ch. 12 - Utility Conventions](https://pubs.openg
 - parenthesis `(miscellaneous info)`
 
 ## C Attributes
-
+```c
+__attribute__((section("<name>"))) // Place the variable or function in section "name"
+__attribute__((weak)) // Define a weak symbol (covered by strong symbol). A weak symbol will have type SHN_COMMON (in common block)
+__attribute__((weakref)) // Define a reference to external functions as weak reference.
+__attribute__((nocommon)) // Do not mark the symbol as `SHN_COMMON`. Instead define it as a strong symbol.
+```
