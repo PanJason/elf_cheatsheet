@@ -16,6 +16,7 @@ $ make clean
 ```
 To clean up
 
+In `bin` and `obj`, there are demo executable and object files respectively. They can be used to test the command below.
 
 # Cheatsheet
 ## `file`
