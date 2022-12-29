@@ -63,6 +63,10 @@ This command shows the information of section headers, similar to `objdump -h`.
 
 This command shows the symbol table of an ELF, similar to `objdump -t`.
 
+`$ readelf -l <filename>`
+
+This command shows how the sections are mapped to segments and also the program header (in executable and shared files after ELF header).
+
 ## `nm`
 `$ nm <filename>`
 
